@@ -1,0 +1,29 @@
+{
+  "name": "icraftads",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.19.0",
+  "type": "module",
+  "pnpm": {
+    "overrides": {
+      "postcss": ">=8.5.10",
+      "sharp": ">=0.35.0"
+    }
+  },
+  "scripts": {
+    "dev": "corepack pnpm --parallel --filter @icraftads/web --filter @icraftads/api dev",
+    "build": "corepack pnpm -r build",
+    "lint": "corepack pnpm -r lint",
+    "typecheck": "corepack pnpm --filter @icraftads/types --filter @icraftads/config --filter @icraftads/validation --filter @icraftads/ui build && corepack pnpm -r typecheck",
+    "test": "corepack pnpm -r test",
+    "e2e": "corepack pnpm --filter @icraftads/web e2e",
+    "format": "prettier --check .",
+    "format:write": "prettier --write ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.38.0",
+    "prettier": "^3.6.2",
+    "typescript-eslint": "^8.46.2",
+    "typescript": "^5.9.3"
+  }
+}
